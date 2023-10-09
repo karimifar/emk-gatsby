@@ -1,0 +1,63 @@
+* {
+  font-family: "Arboria";
+  /* font-style: italic; */
+  font-weight: 400;
+}
+img {
+  user-select: none;
+}
+h1 {
+  font-family: "Chapman-extended";
+  font-weight: 900;
+  font-style: normal;
+}
+
+header {
+  padding: 50px 10% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #bbb;
+}
+
+#site-title {
+  display: flex;
+  text-decoration: none;
+  color: var(--color-text);
+}
+#site-title h1 {
+  font-family: "Arboria", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0;
+  text-decoration: none;
+  align-self: center;
+}
+
+#site-title img {
+  /* width: 30%; */
+  max-width: 80px;
+  margin: 0;
+  margin-right: 15px;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.nav-items li {
+  margin: 0;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+.nav-items a:hover {
+  color: var(--color-primary);
+}
+
+.nav-items a.current-page {
+  text-decoration: underline;
+}

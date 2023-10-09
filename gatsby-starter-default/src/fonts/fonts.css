@@ -1,0 +1,246 @@
+@font-face {
+  font-family: "Arboria";
+  src: url("./Arboria/Arboria-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Arboria";
+  src: url("./Arboria/Arboria-ThinItalic.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Arboria";
+  src: url("./Arboria/Arboria-Light.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Arboria";
+  src: url("./Arboria/Arboria-LightItalic.otf") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Arboria";
+  src: url("./Arboria/Arboria-Book.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Arboria";
+  src: url("./Arboria/Arboria-BookItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Arboria";
+  src: url("./Arboria/Arboria-Medium.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Arboria";
+  src: url("./Arboria/Arboria-MediumItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Arboria";
+  src: url("./Arboria/Arboria-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Arboria";
+  src: url("./Arboria/Arboria-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Arboria";
+  src: url("./Arboria/Arboria-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Arboria";
+  src: url("./Arboria/Arboria-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Chapman */
+
+@font-face {
+  font-family: "Chapman";
+  src: url("./Chapman/ChapmanTest-Regular-BF643e049e6b77a.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chapman";
+  src: url("./Chapman/ChapmanTest-RegularItalic-BF643e049f39092.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Chapman";
+  src: url("./Chapman/ChapmanTest-Medium-BF643e049c4fbc0.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chapman";
+  src: url("./Chapman/ChapmanTest-MediumItalic-BF643e049f44fab.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Chapman";
+  src: url("./Chapman/ChapmanTest-Bold-BF643e049ac52c1.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chapman";
+  src: url("./Chapman/ChapmanTest-BoldItalic-BF643e049f4d1eb.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Chapman";
+  src: url("./Chapman/ChapmanTest-Black-BF643e049a29864.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chapman";
+  src: url("./Chapman/ChapmanTest-BlackItalic-BF643e049aae29a.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Chapman-extended */
+@font-face {
+  font-family: "Chapman-extended";
+  src: url("./Chapman/ChapmanTest-RegularExtended-BF643e049f1a04e.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chapman-extended";
+  src: url("./Chapman/ChapmanTest-RegularExtendedItalic-BF643e049f28e21.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Chapman-extended";
+  src: url("./Chapman/ChapmanTest-MediumExtended-BF643e049cd8be7.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chapman-extended";
+  src: url("./Chapman/ChapmanTest-MediumExtendedItalic-BF643e049f26f93.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Chapman-extended";
+  src: url("./Chapman/ChapmanTest-BoldExtended-BF643e049ae9068.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chapman-extended";
+  src: url("./Chapman/ChapmanTest-BoldExtendedItalic-BF643e049f2707c.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Chapman-extended";
+  src: url("./Chapman/ChapmanTest-BlackExtended-BF643e049a2b5d4.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chapman-extended";
+  src: url("./Chapman/ChapmanTest-BlackExtendedItalic-BF643e049f47ff1.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Chapman-condensed */
+
+@font-face {
+  font-family: "Chapman-condensed";
+  src: url("./Chapman/ChapmanTest-RegularCondensed-BF643e049e7931c.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chapman-condensed";
+  src: url("./Chapman/ChapmanTest-RegularCondensedItalic-BF643e049e91bf4.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Chapman-condensed";
+  src: url("./Chapman/ChapmanTest-MediumCondensed-BF643e049c65c5a.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chapman-condensed";
+  src: url("./Chapman/ChapmanTest-MediumCondensedItalic-BF643e049f2e3a5.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Chapman-condensed";
+  src: url("./Chapman/ChapmanTest-BoldCondensed-BF643e049b06397.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chapman-condensed";
+  src: url("./Chapman/ChapmanTest-BoldCondensedItalic-BF643e049ae0c3b.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Chapman-condensed";
+  src: url("./Chapman/ChapmanTest-BlackCondensed-BF643e049a5d13e.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chapman-condensed";
+  src: url("./Chapman/ChapmanTest-BlackCondensedItalic-BF643e049a36ee9.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
