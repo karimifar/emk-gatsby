@@ -1,9 +1,9 @@
 import * as React from "react"
 import { Link } from "gatsby"
-
+import { useStaticQuery, graphql } from "gatsby"
 //styles
 import "../styles/global.css"
-import * as styles from "./header.module.css"
+// import * as styles from "./header.module.css"
 
 //scripts
 import "../scripts/app.js"
@@ -20,7 +20,8 @@ const Header = ({ siteTitle }) => {
         <img
           alt="Em Karimifar Logo"
           draggable="false"
-          src="./assets/logo-bg.svg"
+          src="/assets/logo-bg.svg"
+          layout="fixed"
         />
         <h1>
           Em <br />
@@ -64,4 +65,21 @@ const Header = ({ siteTitle }) => {
   )
 }
 
+const Menu = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          menuLinks {
+            link
+            name
+          }
+        }
+      }
+    }
+  `)
+  console.log(data)
+  return data
+}
+console.log(Menu)
 export default Header
