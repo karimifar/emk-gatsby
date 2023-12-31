@@ -2,15 +2,16 @@
   --border-radius: 4px;
   --color-text: #181818;
   --color-primary: #3daf72;
-  --color-code-bg: #fff4db;
+  --color-code-bg: #f3f3f3;
   --color-code: #8a6534;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+  --font-sans: "Arboria", -apple-system, BlinkMacSystemFont, Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
-  --font-lg: 18px;
-  --font-md: 16px;
-  --font-sm: 14px;
+  --font-serif: "Chapman-extended", Times, serif;
+  --font-lg: 22px;
+  --font-md: 20px;
+  --font-sm: 16px;
   --font-sx: 12px;
   --line-height-loose: 1.75;
   --line-height-normal: 1.5;
@@ -21,6 +22,7 @@
   --space-4: 24px;
   --space-5: 32px;
   --space-6: 64px;
+  --body-width: 860px;
   --size-content: 54rem;
   --size-gutter: var(--space-5);
   --size-gap: var(--space-6);
@@ -177,7 +179,7 @@ li > p {
   margin-bottom: calc(var(--space-4) / 2);
 }
 p {
-  max-width: 680px;
+  max-width: var(--body-width);
 }
 code {
   font-size: 0.875rem;

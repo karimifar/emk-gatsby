@@ -17,6 +17,7 @@ module.exports = {
       { name: "Home", link: "/" },
       { name: "Works", link: "/works" },
       { name: "About", link: "/about" },
+      // { name: "Blog", link: "/blog" },
     ],
   },
   plugins: [
@@ -32,6 +33,23 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`png`, `jpg`, `webp`],
+          placeholder: `dominantColor`,
+          quality: 100,
+          breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: `transparent`,
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -46,12 +64,52 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `content-images`,
-        path: `./content/Example/images`,
+        name: "content-images",
+        path: "./content/images/",
       },
       __key: "content-images",
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `works`,
+        path: `./content/works/`,
+      },
+      __key: "content-works",
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [
+          "gatsby-remark-unwrap-images",
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              quality: 100,
+              maxWidth: 2400,
+              linkImagesToOriginal: false,
+              backgroundColor: `transparent`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              destinationDir: `path/to/dir`,
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+            },
+          },
+        ],
+      },
     },
   ],
 }

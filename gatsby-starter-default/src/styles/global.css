@@ -1,15 +1,40 @@
 * {
   font-family: "Arboria";
   /* font-style: italic; */
-  font-weight: 400;
+  font-weight: 300;
 }
+
+html,
+body,
+#gatsby-focus-wrapper,
+#___gatsby {
+  height: 100%;
+}
+#gatsby-focus-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.main-content {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  font-size: 12px;
+  background-color: #000;
+  color: #fff;
+}
+
 img {
+  width: 100%;
   user-select: none;
 }
 h1 {
   font-family: "Chapman-extended";
-  font-weight: 900;
+  font-weight: 300;
   font-style: normal;
+  font-size: 48px;
 }
 
 header {
