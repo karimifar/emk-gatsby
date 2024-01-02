@@ -9,6 +9,8 @@ body,
 #gatsby-focus-wrapper,
 #___gatsby {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 #gatsby-focus-wrapper {
   display: flex;

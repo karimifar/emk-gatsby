@@ -5,6 +5,7 @@ category: featured
 role: Design Lead
 featimg: "feat.jpg"
 client: University of Texas System
+order: 3
 ---
 
 <div class="work-intro">
