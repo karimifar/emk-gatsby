@@ -6,6 +6,7 @@ role: Design Lead
 featimg: "feat.jpg"
 client: University of Texas System
 order: 3
+skills: Brand strategy
 ---
 
 <div class="work-intro">

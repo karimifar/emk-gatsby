@@ -1,88 +1,60 @@
-import React, { useEffect, useRef } from "react"
+// P5Sketch.js
+
+import React, { useEffect } from "react"
 import p5 from "p5"
 
 const P5Sketch = () => {
-  const sketchRef = useRef()
-
   useEffect(() => {
+    let sandboxDiv
+
     const sketch = p => {
-      let particles = []
-
-      class Particle {
-        constructor() {
-          this.position = p.createVector(p.random(p.width), p.random(p.height))
-          this.velocity = p.createVector(p.random(-10, 10), p.random(-10, 10))
-          this.size = p.random(5, 15)
-          this.color = p.color(p.random(255), p.random(255), p.random(255), 150)
-        }
-
-        update() {
-          this.position.add(this.velocity)
-
-          if (this.position.x < 0 || this.position.x > p.width) {
-            this.velocity.x *= -1
-          }
-
-          if (this.position.y < 0 || this.position.y > p.height) {
-            this.velocity.y *= -1
-          }
-        }
-
-        display() {
-          p.noStroke()
-          p.fill(this.color)
-          p.ellipse(this.position.x, this.position.y, this.size, this.size)
-        }
-      }
+      let angle = 0
 
       p.setup = () => {
-        const parentElement = sketchRef.current.parentElement
-        const canvasWidth = parentElement.offsetWidth
-        const canvasHeight = parentElement.offsetHeight
-        p.createCanvas(canvasWidth, canvasHeight).parent(sketchRef.current)
+        // Get the width and height of the sandbox div
+        sandboxDiv = document.getElementById("sandbox")
 
-        for (let i = 0; i < 100; i++) {
-          particles.push(new Particle())
-        }
+        // Dynamically set canvas size based on the sandbox dimensions
+        const canvas = p.createCanvas(
+          sandboxDiv.offsetWidth,
+          sandboxDiv.offsetHeight
+        )
+        canvas.parent("sandbox")
+        p.noStroke()
+        p.fill(255, 150)
       }
 
       p.draw = () => {
-        p.background(255)
+        p.background(0)
 
-        for (let i = 0; i < particles.length; i++) {
-          particles[i].update()
-          particles[i].display()
+        const numShapes = 6
+        const radius = 100
+
+        for (let i = 0; i < numShapes; i++) {
+          const x = p.cos(angle + (p.TWO_PI / numShapes) * i) * radius
+          const y = p.sin(angle + (p.TWO_PI / numShapes) * i) * radius
+
+          p.ellipse(p.width / 2 + x, p.height / 2 + y, 40, 40)
         }
+
+        angle += 0.02
       }
 
-      p.mouseMoved = () => {
-        const force = p.createVector(
-          p.mouseX - p.width / 2,
-          p.mouseY - p.height / 2
-        )
-        force.normalize()
-
-        for (let i = 0; i < particles.length; i++) {
-          const distance = p.dist(
-            p.mouseX,
-            p.mouseY,
-            particles[i].position.x,
-            particles[i].position.y
-          )
-          const strengthMapped = p.map(distance, 0, p.width, 1, 1)
-
-          const direction = force.copy()
-          direction.mult(strengthMapped)
-
-          particles[i].velocity = direction
-        }
+      p.windowResized = () => {
+        // Resize the canvas when the window is resized
+        p.resizeCanvas(sandboxDiv.offsetWidth, sandboxDiv.offsetHeight)
       }
     }
 
-    new p5(sketch, sketchRef.current)
+    new p5(sketch)
+
+    // Clean up on component unmount
+    return () => {
+      p5.remove()
+    }
   }, [])
 
-  return <div ref={sketchRef}></div>
+  return <div id="p5sketch"></div>
 }
 
 export default P5Sketch

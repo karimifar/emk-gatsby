@@ -1,18 +1,19 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import P5Sketch from "../components/p5sketch"
+import Home from "../components/home"
 
 import * as styles from "../components/index.module.css"
 import "../styles/home.css"
-import "../scripts/home.js"
 
 const yearsXp = new Date().getFullYear() - 2017
 
 const IndexPage = ({ data }) => {
+  const [visibleThumb, setVisibleThumb] = useState(null)
   const rawWorks = data.allMarkdownRemark.edges
   function isFeatured(work) {
     if (work.node.frontmatter.category == "featured") {
@@ -20,10 +21,10 @@ const IndexPage = ({ data }) => {
     }
   }
   const featWorks = rawWorks.filter(isFeatured)
-  // SORTING NOT NEEDED because graphql does it by default
-  // const works = featWorks.sort(
-  //   (a, b) => a.node.frontmatter.order - b.node.frontmatter.order
-  // )
+  // SORTING NOT NEEDED because graphql does it by default nevermind
+  const works = featWorks.sort(
+    (a, b) => a.node.frontmatter.order - b.node.frontmatter.order
+  )
   console.log(featWorks)
   // console.log(works)
   return (
@@ -47,47 +48,58 @@ const IndexPage = ({ data }) => {
         <div className="wrapper">
           <div className="works-index">
             {featWorks.map(work => {
-              const key = work.node.frontmatter.order
+              const order = work.node.frontmatter.order
               const title = work.node.frontmatter.title
               const url = "." + work.node.fields.slug
               const skills = work.node.frontmatter.skills
+              const id = work.node.id
               return (
-                <a href={url} key={"link-" + key} className="work-link">
-                  <div
-                    className="work-title"
-                    key={"work-" + key}
-                    data-img={"img-" + key}
-                  >
-                    <h1 key={key}>{title}</h1>
+                <a
+                  href={url}
+                  key={"link-" + id}
+                  className="work-link"
+                  data-img={"img-" + id}
+                  onMouseEnter={() => setVisibleThumb(id)}
+                  onMouseLeave={() => setVisibleThumb(null)}
+                >
+                  <div className="work-title" key={"work-" + id}>
+                    <h1 key={id}>{title}</h1>
                     <p className="work-skills">{skills}</p>
                   </div>
                 </a>
               )
             })}
+            <Link to="/works" className="allWorks">
+              <p>view all works</p>
+            </Link>
           </div>
           <div className="works-thumb">
-            {/* <P5Sketch /> */}
-
             {featWorks.map(work => {
               const key = work.node.frontmatter.order
               const title = work.node.frontmatter.title
               const featimg = work.node.frontmatter.featimg
+              const id = work.node.id
               return (
                 <GatsbyImage
                   image={getImage(featimg)}
                   alt={title}
-                  key={"img" + key}
-                  className="work-thumb"
-                  data-img={"img-" + key}
+                  key={id}
+                  className={`work-thumb ${
+                    visibleThumb === id ? "visible" : ""
+                  }`}
+                  data-img={"img-" + id}
+                  id={"img-" + id}
                 />
               )
             })}
+            <div id="thumb-overlay"></div>
+            <div id="sandbox">
+              <P5Sketch />
+            </div>
           </div>
         </div>
       </div>
-      <script>
-        const test = document.querySelectorAll(".work-link") console.log(test)
-      </script>
+      {/* <Home /> */}
     </Layout>
   )
 }

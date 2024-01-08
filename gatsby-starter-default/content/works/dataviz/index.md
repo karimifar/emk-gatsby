@@ -5,7 +5,7 @@ category: featured
 role: Design Lead
 featimg: nas-screen.png
 skills: Front-end Development, UI/UX, Data Visualization
-order: 4
+order: 1
 # client: Multiple
 ---
 

@@ -49,19 +49,21 @@
   text-decoration: none;
 }
 .work-link:hover {
+  background-color: red;
+  color: rgb(177, 177, 177);
 }
 .work-title {
   position: relative;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 1px solid #3daf72bb;
 }
 .work-title h1 {
   font-size: 32px;
   margin-bottom: 10px;
-  padding: 30px 20px;
-  transition: all 0.3s ease-in-out;
+  padding: 24px 20px;
+  transition: all 0.2s ease-in-out;
 }
-.works-index .work-title:first-child {
-  border-top: 1px solid var(--color-primary);
+.works-index .work-link:first-child .work-title {
+  border-top: 1px solid #3daf72bb;
 }
 .work-skills {
   margin-bottom: 0;
@@ -69,17 +71,19 @@
   color: var(--color-code-bg);
   position: absolute;
   left: 0;
-  top: 5px;
+  top: 10px;
   opacity: 0;
-  transition: all 0.8s cubic-bezier(1, 0, 0, 1);
+  transition: all 0.2s ease-in-out;
   /* font-weight: 200; */
 }
 .work-link:hover .work-skills {
-  left: 30px;
+  left: 22px;
   opacity: 1;
 }
 .work-link:hover .work-title h1 {
-  padding-left: 30px;
+  /* padding-left: 30px; */
+  padding-top: 30px;
+  padding-bottom: 18px;
 }
 .work-skills span {
   font-weight: 200;
@@ -92,17 +96,51 @@
 .works-thumb {
   width: 50%;
   position: relative;
+  background-color: var(--color-primary);
+
   /* display: flex; */
   /* height: 600px; */
-  background-color: var(--color-primary);
 }
 .work-thumb {
-  opacity: 0.8;
+  opacity: 0;
   position: absolute;
+  transition: all 0.2s ease-in-out;
   height: 100%;
   width: 100%;
+}
+#thumb-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--color-primary);
+  opacity: 0.4;
+  z-index: 3;
+}
+#sandbox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 1;
+  z-index: 4;
+}
+
+.work-thumb.visible {
+  opacity: 1;
+  z-index: 5;
 }
 .work-thumb-wrapper {
   position: absolute;
   /* height: 100%; */
+}
+a.allWorks {
+}
+.allWorks p {
+  padding: 20px;
+  text-transform: uppercase;
+  width: fit-content;
+  display: inline-block;
+  margin-top: 10px;
+}
+.allWorks p:hover {
+  text-decoration: underline;
 }

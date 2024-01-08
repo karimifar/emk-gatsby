@@ -5,7 +5,7 @@ import "../styles/global.css"
 // import * as styles from "./header.module.css"
 
 //scripts
-import "../scripts/app.js"
+// import "../../static/assets/scripts/app.js"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
