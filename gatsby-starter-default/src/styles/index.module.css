@@ -42,6 +42,7 @@
   text-decoration: none;
 }
 .workLink:hover {
+  background-color: red;
   color: rgb(177, 177, 177);
 }
 .workTitle {

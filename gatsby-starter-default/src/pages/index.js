@@ -5,10 +5,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import P5Sketch from "../components/p5sketch"
-import Home from "../components/home"
 
-import * as styles from "../components/index.module.css"
-import "../styles/home.css"
+import * as styles from "../styles/index.module.css"
 
 const yearsXp = new Date().getFullYear() - 2017
 
@@ -29,9 +27,9 @@ const IndexPage = ({ data }) => {
   // console.log(works)
   return (
     <Layout>
-      <div className="home-banner">
-        <div className="intro-content">
-          <p id="greet">
+      <div className={styles.homeBanner}>
+        <div className={styles.introContent}>
+          <p id={styles.greet}>
             Hi! <br /> I’m a multidisciplinary designer with {yearsXp}+ years of
             experience.
           </p>
@@ -41,12 +39,12 @@ const IndexPage = ({ data }) => {
           </h1>
         </div>
       </div>
-      <div className="feat-works">
+      <div className={styles.featWorks}>
         {/* <div className="label">
         <p>featured works</p>
       </div> */}
-        <div className="wrapper">
-          <div className="works-index">
+        <div className={styles.wrapper}>
+          <div className={styles.worksIndex}>
             {featWorks.map(work => {
               const order = work.node.frontmatter.order
               const title = work.node.frontmatter.title
@@ -57,23 +55,23 @@ const IndexPage = ({ data }) => {
                 <a
                   href={url}
                   key={"link-" + id}
-                  className="work-link"
+                  className={styles.workLink}
                   data-img={"img-" + id}
                   onMouseEnter={() => setVisibleThumb(id)}
                   onMouseLeave={() => setVisibleThumb(null)}
                 >
-                  <div className="work-title" key={"work-" + id}>
+                  <div className={styles.workTitle} key={"work-" + id}>
                     <h1 key={id}>{title}</h1>
-                    <p className="work-skills">{skills}</p>
+                    <p className={styles.workSkills}>{skills}</p>
                   </div>
                 </a>
               )
             })}
-            <Link to="/works" className="allWorks">
+            <Link to="/works" className={styles.allWorks}>
               <p>view all works</p>
             </Link>
           </div>
-          <div className="works-thumb">
+          <div className={styles.worksThumb}>
             {featWorks.map(work => {
               const key = work.node.frontmatter.order
               const title = work.node.frontmatter.title
@@ -84,18 +82,16 @@ const IndexPage = ({ data }) => {
                   image={getImage(featimg)}
                   alt={title}
                   key={id}
-                  className={`work-thumb ${
-                    visibleThumb === id ? "visible" : ""
+                  className={`${styles.workThumb} ${
+                    visibleThumb === id ? styles.visible : ""
                   }`}
                   data-img={"img-" + id}
-                  id={"img-" + id}
+                  id={styles["img-" + id]}
                 />
               )
             })}
-            <div id="thumb-overlay"></div>
-            <div id="sandbox">
-              <P5Sketch />
-            </div>
+            <div id={styles.thumbOverlay}></div>
+            <div id={styles.sandbox}>{/* <P5Sketch /> */}</div>
           </div>
         </div>
       </div>

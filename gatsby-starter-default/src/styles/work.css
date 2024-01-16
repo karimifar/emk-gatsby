@@ -136,8 +136,8 @@ hr {
 }
 .work-body h2 {
   max-width: var(--body-width);
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   margin-bottom: 0.2em;
 }
 

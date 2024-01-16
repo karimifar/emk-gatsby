@@ -1,0 +1,63 @@
+.worksWrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: var(--space-7) auto;
+}
+.workLink {
+  width: calc(33.33% - 16px);
+  margin: var(--space-2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+
+  height: 400px;
+  /* flex-grow: 1; */
+}
+.workLink.hovered {
+  /* background-color: var(--color-primary); */
+}
+.workThumbWrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* height: 300px; */
+  z-index: 1;
+}
+
+.workThumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.workLink h2 {
+  position: absolute;
+  bottom: -40px;
+  left: 0px;
+  color: #fff;
+  line-height: 1.1em;
+  z-index: 3;
+  padding: 8%;
+  font-size: 40px;
+  font-weight: 500;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+.hovered h2 {
+  opacity: 1;
+  bottom: 0;
+}
+
+.thumbOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: #3daf7222;
+}
+.workLink.hovered .thumbOverlay {
+  background-color: #3daf72ec;
+}

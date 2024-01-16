@@ -49,9 +49,9 @@ const P5Sketch = () => {
     new p5(sketch)
 
     // Clean up on component unmount
-    return () => {
-      p5.remove()
-    }
+    // return () => {
+    //   p5.remove()
+    // }
   }, [])
 
   return <div id="p5sketch"></div>
