@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
   const [visibleThumb, setVisibleThumb] = useState(null)
   const rawWorks = data.allMarkdownRemark.edges
   function isFeatured(work) {
-    if (work.node.frontmatter.category == "featured") {
+    if (work.node.frontmatter.category === "featured") {
       return work
     }
   }

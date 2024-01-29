@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import _ from "lodash"
 import Seo from "../components/Seo"
 import Layout from "../components/Layout"
-import * as styles from "./work.module.css"
+import * as styles from "../styles/work.module.css"
 import "../styles/work.css"
 
 const Work = ({ data }) => {

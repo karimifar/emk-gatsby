@@ -14,8 +14,9 @@ module.exports = {
     author: `@gatsbyjs`,
     siteUrl: `https://www.emk.works/`,
     menuLinks: [
-      { name: "Home", link: "/" },
+      // { name: "Home", link: "/" },
       { name: "Works", link: "/works" },
+      { name: "Experiments", link: "/experiments" },
       { name: "About", link: "/about" },
       // { name: "Blog", link: "/blog" },
     ],
@@ -108,6 +109,14 @@ module.exports = {
               ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
             },
           },
+          {
+            resolve: "gatsby-remark-instagram-embed",
+            options: {
+              width: 320,
+              height: 320,
+            },
+          },
+          `gatsby-remark-responsive-iframe`,
         ],
       },
     },

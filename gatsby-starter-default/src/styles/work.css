@@ -2,6 +2,16 @@ hr {
   background: #d8d8d8;
   margin: var(--space-5) 0;
 }
+.spacer-1 {
+  width: 100%;
+  height: var(--space-6);
+  display: block;
+}
+.spacer-2 {
+  width: 100%;
+  height: var(--space-7);
+  display: block;
+}
 .work-intro {
   width: 100%;
   padding: 8% 15%;
@@ -10,6 +20,7 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: var(--space-6);
 }
 
 .work-intro p {

@@ -63,9 +63,9 @@ header {
 
 #site-title img {
   /* width: 30%; */
-  max-width: 80px;
+  width: 80px;
   margin: 0;
-  margin-right: 15px;
+  margin-right: 16px;
 }
 
 .nav-items {
