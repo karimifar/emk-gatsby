@@ -123,6 +123,9 @@ hr {
   margin: 0 10px !important;
 }
 
+.body-img-dbl.tight-margin {
+  margin: var(--space-2) auto;
+}
 .body-img-lg {
   width: 70%;
   margin: var(--space-6) auto;

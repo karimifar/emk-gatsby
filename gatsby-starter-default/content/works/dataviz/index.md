@@ -3,7 +3,7 @@ title: Interactive Data Visualizations
 date: 2019-Present
 category: featured
 role: Design Lead
-featimg: nas-screen.png
+featimg: feat.jpg
 skills: Front-end Development, UI/UX, Data Visualization
 order: 1
 # client: Multiple
